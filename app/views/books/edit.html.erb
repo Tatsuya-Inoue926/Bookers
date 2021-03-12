@@ -1,12 +1,20 @@
 <h1>Editing Book</h1>
 <%= form_with model:@book, local:true do |f| %>
-<h4>タイトル</h4>
+<div class="field">
+<p class="f-name">Title</p>
   <%= f.text_field :title %>
-  <h4>本文</h4>
+</div>
+<div class="field"></div>
+  <p class="f-name">Body</p>
   <%= f.text_area :body %>
-  <%= f.submit 'update Book' %>
+</div>
+<div>
+  <%= f.submit 'Update Book' %>
 <% end %>
-<%= link_to "show", book_path(@book.id) %>
+</div>
+<div class="option">
+<%= link_to "show", book_path(@book.id) %> |
 <%= link_to "back", books_path %>
+</div>
 
 
